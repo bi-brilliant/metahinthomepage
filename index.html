@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MetaHint</title>
+    <title>MetaHint - Floating Navbar</title>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -41,11 +41,33 @@
           font-size: 0.875rem !important;
         }
       }
+
+      /* Navbar floating */
+      .floating-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background-color: #f3f3ff;
+        /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); */
+      }
+
+      /* Padding untuk konten agar tidak tertutup navbar */
+      .content-with-floating-navbar {
+        padding-top: 80px;
+      }
+
+      /* Animasi untuk menu mobile */
+      #mobile-menu {
+        display: none;
+        flex-direction: column;
+      }
     </style>
   </head>
-  <body class="bg-[#F3F3FF]">
-    <!-- Navbar -->
-    <header class="">
+  <body class="bg-[#F3F3FF]" style="height: 200vh">
+    <!-- Floating Navbar -->
+    <header class="floating-navbar">
       <div
         class="max-w-screen-xl mx-auto px-4 sm:px-6 py-4 md:py-6 flex justify-between items-center"
       >
@@ -111,9 +133,12 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="py-12 md:py-16">
+    <section
+      class="py-12 md:py-20 content-with-floating-navbar mt-28"
+      style="background-color: cadetblue"
+    >
       <div
-        class="max-w-screen-xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
+        class="max-w-screen-xl bg-white mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
       >
         <!-- Left Content -->
         <div class="text-center md:text-left">
@@ -144,7 +169,7 @@
           <img
             src="./assets/images/image_robot.png"
             alt="Bot Illustration"
-            class="w-40 md:w-48 lg:w-64 z-10"
+            class="h-[490px] z-10"
           />
         </div>
       </div>
@@ -161,9 +186,13 @@
         },
       };
 
-      // jQuery for toggle mobile menu
+      // jQuery for toggle mobile menu - FIXED
       $("#menu-btn").click(function () {
-        $("#mobile-menu").slideToggle(200);
+        $("#mobile-menu").slideToggle(200, function () {
+          if ($(this).is(":visible")) {
+            $(this).css("display", "flex");
+          }
+        });
       });
 
       // ketika link diklik
