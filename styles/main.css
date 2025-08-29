@@ -122,6 +122,16 @@ body {
   .grid.grid-cols-2.md\\:grid-cols-3 img {
     height: 35px;
   }
+
+  /* ---------- Tokenomics Section */
+  #tokenomics .mt-16 .col-span-2 .flex.gap-8 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* Model card menjadi full width di tablet */
+  #tokenomics .mt-16 .col-span-2 .flex.gap-8 + .flex .flex-1 {
+    width: 100%;
+  }
 }
 
 /* Responsivitas untuk tampilan HP */
@@ -280,5 +290,55 @@ body {
 
   #keyService .keyService-card-container div {
     padding: 17px 15px;
+  }
+
+  /* ---------- Tokenomics Section */
+  #tokenomics .mt-16 .col-span-2 .flex.gap-8 {
+    grid-template-columns: 1fr;
+  }
+
+  #tokenomics .bg-white.p-6.rounded-2xl {
+    padding: 1.25rem;
+  }
+
+  #tokenomics .font-semibold.text-base.md\\:text-xl {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  /* Ubah layout grid utama */
+  #tokenomics .grid.gap-8.grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  /* Atur ulang flex container untuk card-chain, ticker, model */
+  #tokenomics .col-span-2.flex.gap-8 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  /* Card model pindah ke baris baru */
+  #tokenomics .col-span-2.flex.gap-8 > .flex-1:last-child {
+    grid-column: 1 / span 2;
+  }
+
+  /* Card utility */
+  #tokenomics .col-span-1.flex {
+    width: 100%;
+  }
+
+  /* Untuk HP kecil, buat chain dan ticker stacked */
+  @media (max-width: 375px) {
+    #tokenomics .col-span-2.flex.gap-8 {
+      grid-template-columns: 1fr;
+    }
+
+    #tokenomics .col-span-2.flex.gap-8 > .flex-1:last-child {
+      grid-column: 1;
+    }
   }
 }
