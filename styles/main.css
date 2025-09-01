@@ -64,6 +64,14 @@ body {
   padding-left: 1.2rem;
 }
 
+.desktop-layout {
+  display: block;
+}
+
+.mobile-layout {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .chart-container {
     height: 300px;
@@ -323,6 +331,14 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     width: 100%;
+  }
+
+  .desktop-layout {
+    display: none;
+  }
+
+  .mobile-layout {
+    display: block;
   }
 
   /* Card model pindah ke baris baru */
