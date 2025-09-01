@@ -248,7 +248,8 @@ body {
   #about,
   #keyService,
   #tokenomics,
-  #roadmap {
+  #roadmap,
+  #footer {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
