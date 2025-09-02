@@ -204,8 +204,8 @@ body {
     order: -1;
   }
 
-  #home .text-center {
-    /* text-align: left !important; */
+  #home .button-wrapper {
+    margin-bottom: 10px;
   }
 
   #home h1 {
