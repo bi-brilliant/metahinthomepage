@@ -327,6 +327,10 @@ body {
     font-size: 1rem;
   }
 
+  .mobile-text-left {
+    text-align: start !important;
+  }
+
   /* ---------- Sponsor Section */
   .bg-white.py-16 {
     padding-top: 2rem;
